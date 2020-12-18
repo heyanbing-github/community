@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贴吧</title>
+    <script src="/community/jq/jquery-1.11.2.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            background-color: #ebeff2;
+        }
+        a{
+            text-decoration: none;
+            color: gray;
+        }
+        a:hover{
+            color: blue;
+        }
+        .main{
+            width: 800px;
+            height: 1000px;
+            margin-left: 200px;
+            float: left;
+            margin-top: 20px;
+        }
+        .leftd{
+            margin-top: 20px;
+            margin-left: 30px;
+            width: 300px;
+            height: 800px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        &nbsp;&nbsp;&nbsp;
+        <a href="#">|帖子中心|</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <br>
+        <div class="themain">
+
+        </div>
+        <div id="loadPage">我是有底线的...</div>
+    </div>
+
+    <div class="leftd">
+        <br>
+        <a id="houtai" href="/community/user/showindex">创作中心</a>
+        <br>
+        <br>
+        <br>
+        <div class="notice">
+            <a href="#">公告栏</a>
+        </div>
+    </div>
+    <script>
+        var pageNum = 1;
+        function showText(pageSize) {
+            $.get("/community/text/showText",{"pageSize":pageSize,"pageNum":pageNum},function (result) {
+                console.log(pageNum);
+                console.log(result);
+                var divMain = $(".themain");
+                if (result.state == 0){
+                    $.each(result.data.data,function (index,textDto) {
+                        var div = $("<div></div>");
+                        div.css({"border-bottom":"1px solid","padding-bottom":"20px","background-color":"","margin-left":"30px"});
+                        divMain.append(div);
+
+                        //显示发送者头像
+                        var img = $("<img />");
+                        img.attr("src", "/images/"+textDto.text.user.uphoto);
+                        img.css({"width":"50px", "height": "50px", "border-radius":"50%", "margin-right":"30px"});
+                        div.append(img);
+
+                        //发送者昵称
+                        var span = $("<span></span><br><br>");
+                        span.text(textDto.text.user.nickName);
+                        div.append(span);
+
+
+                        //文章题目
+                        var a = $("<a></a>");
+                        a.text(textDto.text.title);
+                        a.css({"font-weight":"bold","color":"black"});
+                        a.attr("href","test.html?tid="+textDto.text.tid);
+                        div.append(a);
+
+                        //显示类型
+                        var a  = $("<a></a><br><br>");
+                        a.text(textDto.kinds);
+                        a.css({"border-radius":"25%","border":"1px solid"});
+                        div.append(a);
+
+                        //显示概要内容
+                        var a = $("<a></a><br><br>");
+                        a.text(textDto.text.content.substring(1,60)+"...");
+                        a.css({"color":"gray", "font-size":"15px"});
+                        a.attr("href", "test.html?tid="+textDto.text.tid);
+                        div.append(a);
+
+                        //显示发送时间
+                        var span = $("<span></span>");
+                        span.text(textDto.text.sendTime);
+                        span.css({"font-size": "13px"});
+                        div.append(span);
+                    })
+                    pageNum++;
+                }
+            })
+        }
+        $(window).scroll(function(){
+            //滚动分页
+            var a = document.getElementById("loadPage").offsetTop;
+            if (a >= $(window).scrollTop() && a < ($(window).scrollTop()+$(window).height())) {
+                showText(5);
+            }
+        })
+        showText(5);
+        var pageNow = 1;
+        function showNotice(pageSize){
+            $.get("/community/admin/getNotice",{"pageNow":pageNow,"pageSize":pageSize},function (result) {
+                var noticeDiv = $(".notice");
+                if (result.state == 0){
+                    $.each(result.data.data,function (index,textDto) {
+                        var p = $("<br><p></p><br>");
+                        p.text(textDto.sendTime);
+                        p.css("color","gray");
+                        p.css("font-size","12px");
+                        noticeDiv.append(p);
+
+                        var p = $("<p></p><br>");
+                        p.text(textDto.content);
+                        // p.css({"background-color":"lightgray"});
+                        noticeDiv.append(p);
+                    })
+                }
+            })
+        }
+        showNotice(10);
+
+    </script>
+</body>
+</html>

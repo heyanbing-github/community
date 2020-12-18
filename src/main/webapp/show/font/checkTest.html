@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>审核页</title>
+    </head>
+    <body >
+        <div class="content" style="text-align: center;">
+            <a href="/community/show/html/waitCheck.html" style="text-decoration: none;">返回</a>
+        </div>
+        <script>
+
+            var searchURL = window.location.search;
+            searchURL = searchURL.substring(1, searchURL.length);
+            var tid = searchURL.split("=");
+
+            $.get("/community/user/pushMessage",{"tid":tid[1]},function (result) {
+                console.log(result);
+
+                var div = $(".content");
+
+                var h1 = $("<h1></h1>");
+                h1.text(text.title);
+                div.append(h1);
+
+                var p = $("<p></p>");
+                p.text(text.content);
+                div.append(p);
+            })
+        </script>
+
+    </body>
+</html>
+

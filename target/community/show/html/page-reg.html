@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../assets/css/core.css" />
+    <link rel="stylesheet" href="../assets/css/menu.css" />
+    <link rel="stylesheet" href="../assets/css/amazeui.css" />
+    <link rel="stylesheet" href="../assets/css/component.css" />
+    <link rel="stylesheet" href="../assets/css/page/form.css" />
+    <script src="/community/jq/jquery-1.11.2.js"></script>
+    <script src="/community/jq/commons.js"></script>
+
+</head>
+<body>
+<div class="account-pages">
+    <div class="wrapper-page">
+        <div class="text-center">
+            <a href="index.html" class="logo"><span>Register<span></span></span></a>
+        </div>
+
+        <div class="m-t-40 card-box">
+            <div class="text-center">
+                <h4 class="text-uppercase font-bold m-b-0">注册</h4>
+            </div>
+            <div class="panel-body">
+                <form class="am-form">
+                    <div class="am-g">
+                        <div class="am-form-group form-horizontal m-t-20">
+                            <span>昵  称：</span><span></span><input type="text" class="am-radius"  placeholder="nickName"  name="nickName" onblur="checkNickName()">
+                        </div>
+                        <div class="am-form-group form-horizontal m-t-20">
+                            <span>密  码：</span><span></span><input type="password" class="am-radius"  placeholder="Password"  name="password" onblur="checkPassword()">
+                        </div>
+                        <div class="am-form-group form-horizontal m-t-20">
+                            <span>手机号：</span><span></span><input type="text" class="am-radius"  placeholder="Phone"  name="phone" onblur="checkPhone()">
+                        </div>
+                        <div class="am-form-group form-horizontal m-t-20">
+                            <span>邮  箱：</span><span></span><input type="email" class="am-radius"  placeholder="Email" name="email" onblur="checkEmail()">
+                        </div>
+                        <div class="am-form-group form-horizontal m-t-20">
+                        <span>地  址：</span><span></span><input type="text" class="am-radius"  placeholder="Adress"  name="adress">
+                        </div>
+                        <div class="am-form-group form-horizontal m-t-20">
+                            <span>性  别：</span><span></span><input type="radio" name="sex" value="男" >男 <input type="radio" name="sex" value="女"  checked="checked">女
+                        </div>
+
+                        <div class="am-form-group ">
+                            <button type="button" class="am-btn am-btn-primary am-radius" style="width: 100%;height: 100%;">Log In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function checkNickName() {
+        //昵称不能为空
+        var nickName =$("input[name='nickName']").val();
+        var span = $("input[name='nickName']").prev();
+        //判断昵称是否符合规范
+        var regx = /^[\u4E00-\u9FA5A-Za-z0-9]{0,7}$/;
+        if(!regx.test(nickName)){
+            span.css("color","red");
+            span.text("用户名不符合规范");
+            return;
+        }
+        $.get("/community/user/checkNickName",{"nickName":nickName},function (data) {
+           // data = JSON.parse(data);
+            if (data.state == 0){
+                span.css("color","green");
+                span.text("√可用");
+            }else {
+                span.css("color","red");
+                span.text("昵称已被注册");
+            }
+        })
+    }
+    function checkPhone() {
+        //手机号不能为空
+        var phone =$("input[name='phone']").val();
+        var span = $("input[name='phone']").prev();
+        //判断昵称是否符合规范
+        var regx = /^[0-9]{11}$/;
+        if(!regx.test(phone)){
+            span.css("color","red");
+            span.text("手机号不符合规范");
+            return;
+        }
+      //判断号码是否被注册
+        $.get("/community/user/checkPhone",{"phone":phone},function (data) {
+            //data = JSON.parse(data);
+            if (data.state == 0){
+                span.css("color","green");
+                span.text("√可用");
+            }else{
+                span.css("color","red");
+                span.text(data.msg);
+            }
+        })
+    }
+        //密码不能为空
+    function checkPassword() {
+        //密码不能为空
+        var password =$("input[name='password']").val();
+        var span = $("input[name='password']").prev();
+        //判断昵称是否符合规范
+        var regx = /^[_a-zA-Z0-9]{6,16}$/;
+        if(!regx.test(password)){
+            span.css("color","red");
+            span.text("密码不符合规范");
+            return;
+        }else if(password.length<14){
+            span.css("color","green");
+            span.text("密码安全系数低，建议修改");
+            return;
+        }else{
+            span.css("color","green");
+            span.text("√可用");
+        }
+    }
+        //邮箱是否符合规范
+    function checkEmail() {
+        //邮箱不能为空
+        var email =$("input[name='email']").val();
+        var span = $("input[name='email']").prev();
+        //判断邮箱是否符合规范
+        var regx = /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/;///^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/;
+        if(!regx.test(email)){
+            span.css("color","red");
+            span.text("邮箱不符合规范");
+            return;
+        }
+        $.get("/community/user/checkEmail",{"email":email},function (data) {
+            //data = JSON.parse(data);
+            if (data.state == 0){
+                span.text("√可用");
+                span.css("color","green");
+            }else {
+                span.css("color","red");
+                span.text("邮箱已被注册");
+            }
+        })
+    }
+    /**
+     * 点击提交事件
+     */
+    $("button[type='button']").click(function (){
+        $.post("/community/user/regDo",$(".am-form").serialize(),function(data){
+            //data = JSON.parse(data);
+            if(data.state == 0){//注册成功
+                confirm("你的账号为： "+data.data+",请牢记");
+                window.location.href = "/community/show/html/login.html";//跳转到登录界面
+            }else{
+                confirm(data.msg);
+            }
+        })
+    });
+
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>	
+		<link rel="stylesheet" href="../assets/css/core.css" />
+		<link rel="stylesheet" href="../assets/css/menu.css" />
+		<link rel="stylesheet" href="../assets/css/amazeui.css" />
+		<link rel="stylesheet" href="../assets/css/component.css" />
+		<link rel="stylesheet" href="../assets/css/page/form.css" />
+		<script src="/community/jq/jquery-1.11.2.js"></script>
+		<script src="/community/jq/commons.js"></script>
+	</head>
+	<body>
+		<div class="account-pages">
+			<div class="wrapper-page">
+				<div class="text-center">
+	                <a href="index.html" class="logo"><span>Admin<span>to</span></span></a>
+	            </div>
+	            
+	            <div class="m-t-40 card-box">
+	            	<div class="text-center">
+	                    <h4 class="text-uppercase font-bold m-b-0">Sign In</h4>
+	                </div>
+	                <div class="panel-body">
+	                	<form class="am-form">
+	                		<div class="am-g">
+	                			<div class="am-form-group">
+							      <input type="text" class="am-radius"  placeholder="Username" name="username">
+							    </div>
+							
+							    <div class="am-form-group form-horizontal m-t-20">
+							      <input type="password" class="am-radius"  placeholder="Password" name="password">
+							    </div>
+								<div class="am-form-group ">
+									<label style="font-weight: normal;color: #999;">
+										<input placeholder="验证码" type="text" name="val" style="float: left;width: 210px">&nbsp;<img src="/community/user/validate" onclick="changeImage(this)" alt="">
+									</label>
+								</div>
+								<div class="am-form-group form-horizontal m-t-20">
+									<input type="radio" name="whichOne" value="管理员登录" >管理员登录 <input type="radio" name="whichOne" value="用户登录"  checked="checked">用户登录
+								</div>
+		                        <div class="am-form-group ">
+		                        	<button type="button" class="am-btn am-btn-primary am-radius" style="width: 100%;height: 100%;">Log In</button>
+		                        </div>
+		                        
+		                        <div class="am-form-group ">
+								    <a href="page-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+									<a href="page-reg.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> 注册</a>
+							</div>
+	                		</div>
+
+	                	</form>
+							
+	                </div>
+	            </div>
+			</div>
+		</div>
+	</body>
+<script>
+
+	function changeImage(obj){
+		obj.src = "/community/user/validate?"+Math.random();
+	}
+
+	// $.get("/community/user/getLoginUser",function (result) {
+	// 	console.log(result)
+	// 	if (result != null){
+	//
+	// 	}
+	// })
+	// $.get("/community/user/getLoginAdmin",function (result) {
+	// 	console.log(result)
+	// 	if (result != null){
+	//
+	// 	}
+	// })
+
+	$("button[type='button']").click(function () {
+		$.post("/community/user/loginDo",$(".am-form").serialize(),function(data){
+			if(data.state == 0){
+				//登录成功
+				window.location.href = "/community/show/index.html";
+			}else{
+				//登录失败
+				alert(data.msg)
+			}
+		})
+	})
+</script>
+</html>

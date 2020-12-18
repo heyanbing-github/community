@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台模板</title>
+    <link rel="stylesheet" href="../assets/css/amazeui.css" />
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../assets/css/core.css" />
+    <link rel="stylesheet" href="../assets/css/menu.css" />
+
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <link rel="stylesheet" href="../assets/css/page/typography.css" />
+    <link rel="stylesheet" href="../assets/css/page/form.css" />
+
+    <script src="/community/jq/commons.js"></script>
+    <script src="/community/jq/jquery-1.11.2.js"></script>
+</head>
+<body>
+<!-- Begin page -->
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-topbar-left am-hide-sm-only">
+        <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+    </div>
+
+    <div class="contain">
+        <ul class="am-nav am-navbar-nav am-navbar-left">
+
+            <li><h4 class="page-title">处理待审核</h4></li>
+        </ul>
+
+        <ul class="am-nav am-navbar-nav am-navbar-right">
+            <li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
+            <li class="hidden-xs am-hide-sm-only">
+                <form role="search" class="app-search">
+                    <input type="text" placeholder="Search..." class="form-control">
+                    <a href=""><img src="../assets/img/search.png"></a>
+                </form>
+            </li>
+        </ul>
+    </div>
+</header>
+<!-- end page -->
+
+
+<div class="admin">
+    <!--<div class="am-g">-->
+    <!-- ========== Left Sidebar Start ========== -->
+    <!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+            <div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+    <!-- sidebar start -->
+    <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <!-- User -->
+            <div class="user-box am-hide-sm-only">
+                <div class="user-img">
+                    <img src="../assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                    <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+                </div>
+                <h5><a href="/community/show/font/main.html">返回主页</a> </h5>
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="text-custom">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End User -->
+
+            <ul class="am-list admin-sidebar-list">
+                <li><a href="../index.html"><span class="am-icon-home"></span> 首页</a></li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 用户 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+                        <li><a href="userInfo.html" class="am-cf"> 个人信息</span></a></li>
+                        <li><a href="managerText.html">管理帖子</a></li>
+                        <li><a href="managerFile.html">管理文件</a></li>
+                        <li><a href="buyGoods.html">购买的商品</a></li>
+                    </ul>
+                </li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 管理员 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                        <li><a href="adminInfo.html" class="am-cf"> 个人信息</span></a></li>
+                        <li><a href="adminManagerUser.html" class="am-cf">用户管理</span></a></li>
+                        <li><a href="adminManagerGoods.html" class="am-cf"> 商品管理</span></a></li>
+                        <li><a href="waitCheck.html" class="am-cf"> 待审核通知</span></a></li>
+                        <li><a href="doNotice.html" class="am-cf"> 发布公告</span></a></li>
+                    </ul>
+                </li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span> 系统信息 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
+                        <li><a href="userSpread.html">用户分布</a></li>
+                        <li><a href="versionNnumber.html">版本号</a></li>
+                        <li><a href="teamIntroduce.html">开发团队介绍</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!--</div>
+</div>
+</div>-->
+    <!-- ========== Left Sidebar end ========== -->
+
+
+
+    <!--	<div class="am-g">-->
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="card-box">
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button type="button" class="am-btn am-btn-default" id="text"><span class="am-icon-save"></span> 审核帖子</button>
+                                <button type="button" class="am-btn am-btn-default" id="file"><span class="am-icon-save"></span> 审核文件</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div  class="am-input-group am-input-group-sm">
+                            <input type="text" class="am-form-field" id="shuru">
+                            <span class="am-input-group-btn">
+				            <button class="am-btn am-btn-default" type="button" id="search">搜索</button>
+				          </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+
+                <!-- Row start -->
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <form class="am-form">
+                            <table class="am-table am-table-striped am-table-hover table-main" >
+                                <thead style="text-align: center" id="head">
+                               <!-- <tr>
+                                    <th class="table-date am-hide-sm-only">标题</th>
+                                    <th class="table-title">种类</th>
+                                    <th class="table-author am-hide-sm-only">内容</th>
+                                    <th class="table-date am-hide-sm-only">发送时间</th>
+                                    <th class="table-date am-hide-sm-only">单个积分</th>
+                                    <th class="table-set">操作</th>
+                                </tr>-->
+                                </thead>
+
+                                <tbody id="tbText">
+
+
+                                </tbody>
+                            </table>
+
+
+                            <div class="am-cf" id="pageam-cf">
+                                <!--              共 15 条记录-->
+                                <div class="am-fr">
+                                    <!--                <ul class="am-pagination">-->
+                                    <!--                  <li class="am-disabled"><a href="#">«</a></li>-->
+                                    <!--                  <li class="am-active"><a href="#">1</a></li>-->
+                                    <!--                  <li><a href="#">2</a></li>-->
+                                    <!--                  <li><a href="#">3</a></li>-->
+                                    <!--                  <li><a href="#">4</a></li>-->
+                                    <!--                  <li><a href="#">5</a></li>-->
+                                    <!--                  <li><a href="#">»</a></li>-->
+                                    <!--                </ul>-->
+                                </div>
+                            </div>
+
+                            <hr/>
+                        </form>
+                    </div>
+
+                </div>
+                <!-- Row end -->
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+</div>
+<!-- end right Content here -->
+<!--</div>-->
+</div>
+</div>
+
+<!-- navbar -->
+<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../assets/js/app.js" ></script>
+<script  type="text/javascript" src="../assets/js/blockUI.js" ></script>
+
+<script>
+    function showText(pageNow,pageSize){
+        $.get("/community/admin/showTextPass",{"pageNow":pageNow,"pageSize":pageSize},function (result) {
+            if(result.state==0){//成功
+                var pager = result.data;
+
+                $("th").remove();
+                var th1 = $("<th class='table-id'></th>").text("标题");
+                var th2 = $("<th class='table-title'></th>").text("种类");
+                var th3 = $("<th class='table-type'></th>").text("内容");
+                var th4 = $("<th class='table-author am-hide-sm-only'></th>").text("单个积分");
+                var th5 = $("<th class='table-date am-hide-sm-only'></th>").text("发送时间");
+                var th6 = $("<th class='table-set'></th>").text("操作");
+                var head = $("#head");
+                head.append(th1).append(th2).append(th3).append(th4).append(th5).append(th6);
+                head.css("text-align","center");
+                show(pager);
+            }else if (result.state==1) {//没有发过帖子
+                alert(result.msg);
+            }else if (result.state==2){//未登录
+
+            }
+        })
+    }
+
+    function show(pager){
+        //循环pager  Pager<TextDto> pager = new Pager<>();
+        //TextDto 包含Text 和 type
+        //放入标签 <tbody id="tbText">
+
+        var textbody = $("#tbText");
+        $("td").remove();
+        $.each(pager.data,function (index,textDto) {
+            var textTr = $("<tr></tr>");
+            textbody.append(textTr);
+
+            var textTdId = $("<td></td>");
+            textTr.append(textTdId);
+            textTdId.html(textDto.text.title);
+
+            var textTdTitile = $("<td></td>");
+            textTr.append(textTdTitile);
+            var textATitile = $("<a></a>");
+            textTdTitile.append(textATitile);
+            textATitile.attr("href","#");
+            textATitile.append(textDto.kinds);
+
+            var textTdType = $("<td></td>");
+            textTr.append(textTdType);
+            var $a = $("<a></a>")
+            $a.text("内容详情");
+            $a.attr("href","/community/show/font/test.html?"+textDto.text.tid)
+            textTdType.append($a);
+
+            var textTdFabulousNum = $("<td></td>");
+            textTdFabulousNum.attr("class","am-hide-sm-only");
+            textTr.append(textTdFabulousNum);
+            textTdFabulousNum.html(textDto.text.score);
+
+            var textTdSendTime = $("<td></td>");
+            textTdSendTime.attr("class","am-hide-sm-only");
+            textTr.append(textTdSendTime);
+            textTdSendTime.html(textDto.text.sendTime);
+
+            var textDo = $("<td></td>");
+            textTr.append(textDo);
+            var textDivM = $("<div></div>");
+            textDivM.attr("class","am-btn-toolbar");
+            textDo.append(textDivM);
+
+            var textDivN = $("<div></div>");
+            textDivN.attr("class","am-btn-group am-btn-group-xs");
+            textDivM.append(textDivN);
+
+             var textButton1 = $("<button></button>");
+             textButton1.attr("class","am-btn am-btn-default am-btn-xs am-text-secondary");
+             textDivN.append(textButton1);
+             var textButton1Span = $("<span></span>");
+             textButton1Span.attr("class","am-icon-pencil-square-o");
+             textButton1.append(textButton1Span);
+             textButton1.html("审核通过");
+             textButton1.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                 var tid = textDto.text.tid;
+                 $.post("/community/admin/doTextPass",{"tid":tid,"ispass":0},function (result) {
+
+                     if(result.state==0){
+                         alert("审核已通过");
+                         showText(pager.pageNow,pager.pageSize);
+                     }else if(result.state==1){
+                         alert("操作失败")
+                     }
+                 })
+
+             })
+
+
+            var textButton2 = $("<button></button>");
+            textButton2.attr("class","am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only");
+            textDivN.append(textButton2);
+            var textButton2Span = $("<span></span>");
+            textButton2Span.attr("class","am-icon-trash-o");
+            textButton2.append(textButton2Span);
+            textButton2.html("审核不通过");
+            textButton2.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                var tid = textDto.text.tid;
+                $.post("/community/admin/doTextPass",{"tid":tid,"ispass":2},function (result) {
+
+                    if(result.state==0){
+                        alert("审核未通过");
+                        showText(pager.pageNow,pager.pageSize);
+                    }else if(result.state==1){
+                        alert("操作失败")
+                    }
+                })
+
+            })
+
+
+        })
+
+
+        var pageNumForm = $(".am-form");
+        var pageNumMaxDiv = $("#pageam-cf");
+        pageNumForm.append(pageNumMaxDiv);
+        pageNumMaxDiv.text("共"+pager.totalCount+"条记录");
+
+
+        var pageNumDiv = $("<div></div>");
+        pageNumDiv.attr("class","am-fr");
+        pageNumMaxDiv.append(pageNumDiv);
+
+
+        var pageUl = $("<ul class='am-pagination'></ul>");
+        pageNumDiv.append(pageUl);
+
+        //上一页页码
+        var liLast = $("<li></li>");
+        var liLastA = $("<a href='#'></a>");
+        liLastA.html("«");
+        liLast.append(liLastA);
+        liLastA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now>1){
+                showText(now-1,size);
+            }
+        });
+        pageUl.append(liLast);
+
+        //页码
+        for (var i=1;i<=pager.pageCount;i++) {
+            var liNum = $("<li></li>");
+            var liNumA = $("<a href='#'></a>");
+            liNum.append(liNumA);
+            pageUl.append(liNum);
+            liNumA.html(i);
+            liNumA.on("click", {"pageNow": i, "pageSize": pager.pageSize}, function (e) {
+                var now = e.data.pageNow;
+                var size = e.data.pageSize;
+                showText(now, size);
+            })
+            if (i==pager.pageNow){
+                liNum.attr("class","am-active");
+            }
+        }
+
+        var liNext = $("<li></li>");
+        var liNextA = $("<a href='#'></a>");
+        liNextA.html("»");
+        liNext.append(liNextA);
+        liNextA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now<pager.pageCount){
+                showText(now+1,size);
+            }
+
+        })
+        pageUl.append(liNext);
+    }
+    function show1(pager){
+        //循环pager  Pager<TextDto> pager = new Pager<>();
+        //TextDto 包含Text 和 type
+        //放入标签 <tbody id="tbText">
+
+        var textbody = $("#tbText");
+        $("td").remove();
+        $.each(pager.data,function (index,textDto) {
+            var textTr = $("<tr></tr>");
+            textbody.append(textTr);
+
+            var textTdId = $("<td></td>");
+            textTr.append(textTdId);
+            textTdId.html(textDto.text.title);
+
+            var textTdTitile = $("<td></td>");
+            textTr.append(textTdTitile);
+            var textATitile = $("<a></a>");
+            textTdTitile.append(textATitile);
+            textATitile.attr("href","#");
+            textATitile.append(textDto.kinds);
+
+            var textTdType = $("<td></td>");
+            textTr.append(textTdType);
+            var $a = $("<a></a>")
+            $a.text("内容详情");
+            $a.attr("href","/community/show/font/checkTest.html?tid="+textDto.text.tid)
+            textTdType.append($a);
+
+            var textTdFabulousNum = $("<td></td>");
+            textTdFabulousNum.attr("class","am-hide-sm-only");
+            textTr.append(textTdFabulousNum);
+            textTdFabulousNum.html(textDto.text.score);
+
+            var textTdSendTime = $("<td></td>");
+            textTdSendTime.attr("class","am-hide-sm-only");
+            textTr.append(textTdSendTime);
+            textTdSendTime.html(textDto.text.sendTime);
+
+            var textDo = $("<td></td>");
+            textTr.append(textDo);
+            var textDivM = $("<div></div>");
+            textDivM.attr("class","am-btn-toolbar");
+            textDo.append(textDivM);
+
+            var textDivN = $("<div></div>");
+            textDivN.attr("class","am-btn-group am-btn-group-xs");
+            textDivM.append(textDivN);
+
+            var textButton1 = $("<button></button>");
+            textButton1.attr("class","am-btn am-btn-default am-btn-xs am-text-secondary");
+            textDivN.append(textButton1);
+            var textButton1Span = $("<span></span>");
+            textButton1Span.attr("class","am-icon-pencil-square-o");
+            textButton1.append(textButton1Span);
+            textButton1.html("审核通过");
+            textButton1.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                var tid = textDto.text.tid;
+                $.post("/community/admin/doTextPass",{"tid":tid,"ispass":0},function (result) {
+
+                    if(result.state==0){
+                        alert("审核已通过");
+                        var kinds = $("#shuru").val();
+                        $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":pageNow,"pageSize":pageSize},function (result) {
+                            var pager = result.data;
+                            if(result.state==1){
+                                alert("该种类的帖子不存在");
+                            }else if(result.state==0) {
+                                show1(pager);
+                            }
+                        })
+                    }else if(result.state==1){
+                        alert("操作失败")
+                    }
+                })
+
+            })
+
+
+            var textButton2 = $("<button></button>");
+            textButton2.attr("class","am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only");
+            textDivN.append(textButton2);
+            var textButton2Span = $("<span></span>");
+            textButton2Span.attr("class","am-icon-trash-o");
+            textButton2.append(textButton2Span);
+            textButton2.html("审核不通过");
+            textButton2.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                var tid = textDto.text.tid;
+                $.post("/community/admin/doTextPass",{"tid":tid,"ispass":2},function (result) {
+
+                    if(result.state==0){
+                        alert("审核未通过");
+                        var kinds = $("#shuru").val();
+                        $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":pageNow,"pageSize":pageSize},function (result) {
+                            var pager = result.data;
+                            if(result.state==1){
+                                alert("该种类的帖子不存在");
+                            }else if(result.state==0) {
+                                show1(pager);
+                            }
+                        })
+                    }else if(result.state==1){
+                        alert("操作失败")
+                    }
+                })
+
+            })
+
+
+        })
+
+
+        var pageNumForm = $(".am-form");
+        var pageNumMaxDiv = $("#pageam-cf");
+        pageNumForm.append(pageNumMaxDiv);
+        pageNumMaxDiv.text("共"+pager.totalCount+"条记录");
+
+
+        var pageNumDiv = $("<div></div>");
+        pageNumDiv.attr("class","am-fr");
+        pageNumMaxDiv.append(pageNumDiv);
+
+
+        var pageUl = $("<ul class='am-pagination'></ul>");
+        pageNumDiv.append(pageUl);
+
+        //上一页页码
+        var liLast = $("<li></li>");
+        var liLastA = $("<a href='#'></a>");
+        liLastA.html("«");
+        liLast.append(liLastA);
+        liLastA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now>1){
+                var kinds = $("#shuru").val();
+                $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":now-1,"pageSize":size},function (result) {
+                    var pager = result.data;
+                    if(result.state==1){
+                        alert("该种类的帖子不存在");
+                    }else if(result.state==0) {
+                        show1(pager);
+                    }
+                })
+            }
+        });
+        pageUl.append(liLast);
+
+        //页码
+        for (var i=1;i<=pager.pageCount;i++) {
+            var liNum = $("<li></li>");
+            var liNumA = $("<a href='#'></a>");
+            liNum.append(liNumA);
+            pageUl.append(liNum);
+            liNumA.html(i);
+            liNumA.on("click", {"pageNow": i, "pageSize": pager.pageSize}, function (e) {
+                var now = e.data.pageNow;
+                var size = e.data.pageSize;
+                var kinds = $("#shuru").val();
+                $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":now,"pageSize":size},function (result) {
+                    var pager = result.data;
+                    if(result.state==1){
+                        alert("该种类的帖子不存在");
+                    }else if(result.state==0) {
+                        show1(pager);
+                    }
+                })
+            })
+            if (i==pager.pageNow){
+                liNum.attr("class","am-active");
+            }
+        }
+
+        var liNext = $("<li></li>");
+        var liNextA = $("<a href='#'></a>");
+        liNextA.html("»");
+        liNext.append(liNextA);
+        liNextA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now<pager.pageCount){
+                var kinds = $("#shuru").val();
+                $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":now+1,"pageSize":size},function (result) {
+                    var pager = result.data;
+                    if(result.state==1){
+                        alert("该种类的帖子不存在");
+                    }else if(result.state==0) {
+                        show1(pager);
+                    }
+                })
+            }
+
+        })
+        pageUl.append(liNext);
+    }
+
+    function showFiles(pageNow,pageSize){
+        $.get("/community/admin/showFilePass",{"pageNow":pageNow,"pageSize":pageSize},function (result) {
+            if(result.state==0){//成功
+                var pager = result.data;
+                $("th").remove();
+                var th1 = $("<th class='table-id'></th>").text("文件名");
+                var th2 = $("<th class='table-title'></th>").text("文件介绍");
+                var th3 = $("<th class='table-type'></th>").text("文件大小");
+                var th4 = $("<th class='table-author am-hide-sm-only'></th>").text("单个积分");
+                var th5 = $("<th class='table-date am-hide-sm-only'></th>").text("发送时间");
+                var th6 = $("<th class='table-set'></th>").text("操作");
+                var head = $("#head");
+                head.append(th1).append(th2).append(th3).append(th4).append(th5).append(th6);
+                head.css("text-align","center");
+                showFile(pager);
+            }else if (result.state==1) {//没有发过帖子
+                alert(result.msg);
+            }else if (result.state==2){//未登录
+
+            }
+        })
+    }
+
+    function showFile(pager){
+        //循环pager  Pager<TextDto> pager = new Pager<>();
+        //TextDto 包含Text 和 type
+        //放入标签 <tbody id="tbText">
+
+        var textbody = $("#tbText");
+        $("td").remove();
+        $.each(pager.data,function (index,file) {
+            var textTr = $("<tr></tr>");
+            textbody.append(textTr);
+
+            var textTdId = $("<td></td>");
+            textTr.append(textTdId);
+            textTdId.html(file.fname);
+
+            var textTdTitile = $("<td></td>");
+            textTr.append(textTdTitile);
+            var textATitile = $("<a></a>");
+            textTdTitile.append(textATitile);
+            textATitile.attr("href","#");
+            textATitile.append(file.context);
+
+            var textTdType = $("<td></td>");
+            textTr.append(textTdType);
+            textTdType.html(file.size);
+
+            var textTdFabulousNum = $("<td></td>");
+            textTdFabulousNum.attr("class","am-hide-sm-only");
+            textTr.append(textTdFabulousNum);
+            textTdFabulousNum.html(file.score);
+
+            var textTdSendTime = $("<td></td>");
+            textTdSendTime.attr("class","am-hide-sm-only");
+            textTr.append(textTdSendTime);
+            textTdSendTime.html(file.sendTime);
+
+            var textDo = $("<td></td>");
+            textTr.append(textDo);
+            var textDivM = $("<div></div>");
+            textDivM.attr("class","am-btn-toolbar");
+            textDo.append(textDivM);
+
+            var textDivN = $("<div></div>");
+            textDivN.attr("class","am-btn-group am-btn-group-xs");
+            textDivM.append(textDivN);
+
+            var textButton1 = $("<button></button>");
+            textButton1.attr("class","am-btn am-btn-default am-btn-xs am-text-secondary");
+            textDivN.append(textButton1);
+            var textButton1Span = $("<span></span>");
+            textButton1Span.attr("class","am-icon-pencil-square-o");
+            textButton1.append(textButton1Span);
+            textButton1.html("审核通过");
+            textButton1.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                var fid = file.fid;
+                $.post("/community/admin/doFilePass",{"fid":fid,"ispass":0},function (result) {
+
+                    if(result.state==0){
+                        alert("审核已通过");
+                        showFiles(pager.pageNow,pager.pageSize);
+                    }else if(result.state==1){
+                        alert("操作失败")
+                    }
+                })
+
+            })
+
+
+            var textButton2 = $("<button></button>");
+            textButton2.attr("class","am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only");
+            textDivN.append(textButton2);
+            var textButton2Span = $("<span></span>");
+            textButton2Span.attr("class","am-icon-trash-o");
+            textButton2.append(textButton2Span);
+            textButton2.html("审核不通过");
+            textButton2.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function () {
+                var fid = file.fid;
+                $.post("/community/admin/doFilePass",{"fid":fid,"ispass":2},function (result) {
+
+                    if(result.state==0){
+                        alert("审核未通过");
+                        showFiles(pager.pageNow,pager.pageSize);
+                    }else if(result.state==1){
+                        alert("操作失败")
+                    }
+                })
+
+            })
+
+
+        })
+
+
+        var pageNumForm = $(".am-form");
+        var pageNumMaxDiv = $("#pageam-cf");
+        pageNumForm.append(pageNumMaxDiv);
+        pageNumMaxDiv.text("共"+pager.totalCount+"条记录");
+
+
+        var pageNumDiv = $("<div></div>");
+        pageNumDiv.attr("class","am-fr");
+        pageNumMaxDiv.append(pageNumDiv);
+
+
+        var pageUl = $("<ul class='am-pagination'></ul>");
+        pageNumDiv.append(pageUl);
+
+        //上一页页码
+        var liLast = $("<li></li>");
+        var liLastA = $("<a href='#'></a>");
+        liLastA.html("«");
+        liLast.append(liLastA);
+        liLastA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now>1){
+                showFiles(now-1,size);
+            }
+        });
+        pageUl.append(liLast);
+
+        //页码
+        for (var i=1;i<=pager.pageCount;i++) {
+            var liNum = $("<li></li>");
+            var liNumA = $("<a href='#'></a>");
+            liNum.append(liNumA);
+            pageUl.append(liNum);
+            liNumA.html(i);
+            liNumA.on("click", {"pageNow": i, "pageSize": pager.pageSize}, function (e) {
+                var now = e.data.pageNow;
+                var size = e.data.pageSize;
+                showFiles(now, size);
+            })
+            if (i==pager.pageNow){
+                liNum.attr("class","am-active");
+            }
+        }
+
+        var liNext = $("<li></li>");
+        var liNextA = $("<a href='#'></a>");
+        liNextA.html("»");
+        liNext.append(liNextA);
+        liNextA.on("click",{"pageNow":pager.pageNow,"pageSize":pager.pageSize},function (e) {
+            var now = e.data.pageNow;
+            var size= e.data.pageSize;
+            if (now<pager.pageCount){
+                showFiles(now+1,size);
+            }
+
+        })
+        pageUl.append(liNext);
+    }
+
+    showText(1,5);
+
+
+</script>
+
+<script>
+    $("#search").on("click",function () {
+        var pageNow=1;
+        var pageSize=5;
+        var kinds = $("#shuru").val();
+        $.post("/community/admin/searchText",{"kinds":kinds,"pageNow":pageNow,"pageSize":pageSize},function (result) {
+            var pager = result.data;
+            if(result.state==1){
+                alert("该种类的帖子不存在");
+            }else if(result.state==0) {
+                show1(pager);
+            }
+        })
+    })
+</script>
+
+<script>
+    $("#text").on("click",function () {
+        showText(1,5);
+    })
+    $("#file").on("click",{"pageNow":1,"pageSize":5},function (e) {
+        var pageNow = e.data.pageNow;
+        var pageSize = e.data.pageSize;
+        showFiles(pageNow,pageSize);
+    })
+</script>
+</body>
+
+</html>

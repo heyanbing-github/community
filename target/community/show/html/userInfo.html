@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>后台模板</title>
+		<link rel="stylesheet" href="../assets/css/amazeui.css" />
+		<link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
+		<link rel="stylesheet" href="../assets/css/core.css" />
+		<link rel="stylesheet" href="../assets/css/menu.css" />
+
+		<link rel="stylesheet" href="../assets/css/admin.css" />
+		<link rel="stylesheet" href="../assets/css/page/typography.css" />
+		<link rel="stylesheet" href="../assets/css/page/form.css" />
+		<style>
+		</style>
+		<script src="/community/jq/jquery-1.11.2.js"></script>
+	</head>
+	<body>
+		<!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="../index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+					<br>
+					<h3>个人主页</h3>
+				</ul>
+
+
+<!--				<ul class="am-nav am-navbar-nav am-navbar-right">-->
+<!--					<li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>-->
+<!--					<li class="hidden-xs am-hide-sm-only">-->
+<!--                        <form role="search" class="app-search">-->
+<!--&lt;!&ndash;                            <input type="text" placeholder="Search..." class="form-control">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href=""><img src="../assets/img/search.png"></a>&ndash;&gt;-->
+<!--                        </form>-->
+<!--                    </li>-->
+<!--				</ul>-->
+			</div>
+		</header>
+		<!-- end page -->
+
+		
+		<div class="admin">
+			<!--<div class="am-g">-->
+		<!-- ========== Left Sidebar Start ========== -->
+		<!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+				<div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+                  <!-- sidebar start -->
+				  <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+				    <div class="am-offcanvas-bar admin-offcanvas-bar">
+				    	<!-- User -->
+						<div class="user-box am-hide-sm-only">
+	                        <div class="user-img">
+								<a href="#"><img src="../assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive"></a>
+	                            <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+	                        </div>
+							<h5><a href="/community/show/font/main.html">返回主页</a> </h5>
+	                        <ul class="list-inline">
+	                            <li>
+	                                <a href="#">
+	                                    <i class="am-icon-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	
+	                            <li>
+	                                <a href="#" class="text-custom">
+	                                    <i class="am-icon-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <!-- End User -->
+	            
+						<ul class="am-list admin-sidebar-list">
+						   <li><a href="../index.html"><span class="am-icon-home"></span> 首页</a></li>
+						   <li class="admin-parent">
+						     <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 用户 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+						       <li><a href="userInfo.html" class="am-cf"> 个人信息</span></a></li>
+						       <li><a href="managerText.html">管理帖子</a></li>
+														<li><a href="managerFile.html">管理文件</a></li>
+														<li><a href="buyGoods.html">购买的商品</a></li>
+						     </ul>
+						   </li>
+						   <li class="admin-parent">
+						     <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 管理员 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+						       <li><a href="adminInfo.html" class="am-cf"> 个人信息</span></a></li>
+						       <li><a href="adminManagerUser.html" class="am-cf">用户管理</span></a></li>
+						       <li><a href="adminManagerGoods.html" class="am-cf"> 商品管理</span></a></li>
+														<li><a href="waitCheck.html" class="am-cf"> 待审核通知</span></a></li>
+														<li><a href="doNotice.html" class="am-cf"> 发布公告</span></a></li>
+						     </ul>
+						   </li>
+						   <li class="admin-parent">
+						     <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span> 系统信息 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						     <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
+						       <li><a href="userSpread.html">用户分布</a></li>
+														<li><a href="versionNnumber.html">版本号</a></li>
+														<li><a href="teamIntroduce.html">开发团队介绍</a></li>
+						     </ul>
+						   </li>
+						 </ul>
+				</div>
+				  </div>
+				  <!-- sidebar end -->
+    
+				<!--</div>
+			</div>
+		</div>-->
+		<!-- ========== Left Sidebar end ========== -->
+		
+		
+		
+	<!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<div class="content-page">
+			<!-- Row start -->
+			<div class="am-u-md-3">
+				<div class="card-box">
+					<h4 class="header-title m-t-0 m-b-30">帖子点赞评论量</h4>
+					<div class="widget-chart-1 am-cf">
+						<div id="widget-chart-box-1" style="height: 110px;width: 110px;float: left;">
+						</div>
+
+
+						<div class="widget-detail-1" style="float: right;">
+							<h2 class="p-t-10 m-b-0" id="fc"> 0 </h2>
+							<p class="text-muted">次</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- col end -->
+			<div class="am-u-md-3">
+				<div class="card-box">
+					<h4 class="header-title m-t-0 m-b-30">我的资源量</h4>
+					<div class="widget-box-2">
+						<div class="widget-detail-2">
+							<span class="badge  pull-left m-t-20  am-round progress-bar-pink" style="color: #fff;">条 <i class="zmdi zmdi-trending-up"></i> </span>
+							<h2 class="m-b-0" id="myCount"> 0 </h2>
+							<p class="text-muted m-b-25">记录点滴</p>
+						</div>
+						<div class="am-progress am-progress-xs am-margin-bottom-0">
+							<div class="am-progress-bar" style="width: 80%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- col end -->
+			<div class="am-u-md-3">
+				<div class="card-box">
+					<h4 class="header-title m-t-0 m-b-30">资源文件下载量</h4>
+					<div class="widget-chart-1 am-cf">
+						<div id="widget-chart-box-2" style="height: 110px;width: 110px;float: left;">
+						</div>
+
+						<div class="widget-detail-1" style="float: right;">
+							<h2 class="p-t-10 m-b-0" id="loadCount"> 0 </h2>
+							<p class="text-muted">次</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- col end -->
+			<div class="am-u-md-3">
+				<div class="card-box">
+					<h4 class="header-title m-t-0 m-b-30">积分</h4>
+					<div class="widget-box-2">
+						<div class="widget-detail-2">
+							<span class="badge  pull-left m-t-20  am-round progress-bar-pink" style="color: #fff;">分 <i class="zmdi zmdi-trending-up"></i> </span>
+							<h2 class="m-b-0" id="score"> 0 </h2>
+							<p class="text-muted m-b-25">行为良好</p>
+						</div>
+						<div class="am-progress am-progress-xs am-margin-bottom-0" style="background: rgba(255, 138, 204, 0.2);">
+							<div class="am-progress-bar progress-bar-pink" style="width: 80%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Row end -->
+			<!-- Start content -->
+			<div class="content">
+				<div class="am-g">
+					<!-- Row start -->
+						<div class="am-u-sm-6">
+							<div class="card-box"  style="height: 700px;width: 1132px;">
+
+								<!-- col start -->
+								<table class="am-table" style="height: 700px;width: 300px;margin-left: 50px;float: left;overflow-y: scroll;overflow-x: hidden">
+
+										<tbody id="showInfo"  >
+											<a href="/community/user/logOut">注销</a>
+										</tbody>
+
+								</table>
+								<!-- col end -->
+								<!-- col start -->
+								<div class="am-u-md-8">
+									<div class="card-box" style="float: left;margin-left: 50px">
+										<!-- 个人帖子状态 +++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+										<h4 class="header-title m-t-0 m-b-30">我的最新帖子&nbsp;&nbsp;<a href="managerText.html" style="font-size: 10px">管理</a></h4>
+										<div class="am-scrollable-horizontal am-text-ms" style="font-family: '微软雅黑';width: 643px;height: 198px;margin-top: 0px">
+
+											<table class="am-table   am-text-nowrap">
+												<thead>
+												<tr>
+													<th>#</th>
+													<th>标题</th>
+													<th>发表时间</th>
+													<th>状态</th>
+												</tr>
+												</thead>
+												<tbody   id="newText">
+
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- col end -->
+								<!-- col start -->
+								<div class="am-u-md-8">
+									<div class="card-box" style="float: left;margin-left: 36px">
+										<!-- 个人帖子状态 +++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+										<h4 class="header-title m-t-0 m-b-30">我的最新文件&nbsp;&nbsp;<a href="managerFile.html" style="font-size: 10px">管理</a></h4>
+										<div class="am-scrollable-horizontal am-text-ms" style="font-family: '微软雅黑';width: 643px;height: 198px;margin-top: 0px">
+											<table class="am-table   am-text-nowrap">
+												<thead>
+												<tr>
+													<th>#</th>
+													<th>标题</th>
+													<th>发表时间</th>
+													<th>状态</th>
+												</tr>
+												</thead>
+												<tbody   id="newFile">
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- col end -->
+							</div>
+						</div>
+
+
+					<!-- col end -->
+				</div>
+				<!-- row end -->
+
+
+			</div>
+		</div>
+
+		<!-- end right Content here -->
+		<!--</div>-->
+		</div>
+		</div>
+
+		<script>
+			//获取登录用户的信息
+			$.get("/community/user/getLoginUser", {}, function (result) {
+				if (result.state == 0) {
+					// table
+					var table = $("#showInfo");
+					//用户的头像
+					var trPhoto = $("<tr></tr>");
+
+					trPhoto.css({"height":"100px"});
+					var img = $("<img />");
+					img.attr("src", "/images/" +result.data.user.uphoto);
+					img.css({"height":"100px", "width":"100px","border-radius":"50%"});
+					trPhoto.append(img);
+					table.append(trPhoto);
+					img.click(function () {
+						window.location.href = "/community/show/html/change_message.html";//跳转到登录界面
+					});
+
+					//用户的昵称
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("昵称：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.nickName);
+					// td.click(function () {
+					// 	var ttd = $(this);
+					//
+					// 	var text = result.data.user.nickName;
+					// 	var input = $("<input/>");
+					// 	input.val(text);
+					// 	input.attr("type", "text");
+					//
+					// 	ttd.empty();
+					// 	ttd.append(input);
+					//
+					// 	//添加监听事件
+					// 	input.keyup(function () {
+					// 		var which = event.keyCode || event.which;
+					// 		if(which == 13){//回车
+					// 			ttd.html(input.val());
+					// 		}else if(which == 27){//esc
+					// 			ttd.html(text);
+					// 		}
+					// 	})
+					// 	//当失去焦点时
+					// 	input.blur(function () {
+					// 		ttd.html(input.val());
+					// 	})
+					// 	//当点击时获取焦点
+					// 	input.trigger("focus").trigger("select");
+					//
+					// })
+					tr.append(td);
+
+					table.append(tr);
+
+
+					//用户地址
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("地址：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.address);
+					tr.append(td);
+
+					table.append(tr);
+
+					//用户邮箱
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("邮箱：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.email);
+					tr.append(td);
+
+					table.append(tr);
+
+					//用户电话
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("电话：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.phone);
+					tr.append(td);
+
+					table.append(tr);
+
+					//用户性别
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("性别：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.sex);
+					tr.append(td);
+
+					table.append(tr);
+
+					//用户名
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("账号：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.user.username);
+					tr.append(td);
+
+					table.append(tr);
+
+					//积分
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text("积分：");
+					tr.append(td);
+
+					var td = $("<td></td>");
+					td.text(result.data.score);
+					tr.append(td);
+					table.append(tr);
+
+
+
+
+				}
+			});
+
+			//获取登陆用户的最新帖子
+			$.get("/community/user/getLoginUserNewText", {}, function (result) {
+				var table = $("#newText");
+
+				$.each(result.data,function (index, text) {
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text(index+1);
+					tr.append(td);
+					var td = $("<td></td>");
+					td.text(text.title);
+					tr.append(td);
+					var td = $("<td></td>");
+					td.text(text.sendTime);
+					tr.append(td);
+					var td = $("<td></td>");
+					var span = $("<span></span>")
+					td.append(span);
+					tr.append(td);
+					if (text.ispass == 0){
+						span.attr("class","label label-pink");
+						span.text("审核通过");
+					} else if (text.ispass == 1){
+						span.text("等待审核");
+						span.attr("class","label label-purple");
+					} else if (text.ispass == 2){
+						span.text("审核未过");
+						span.attr("class","label label-danger");
+					}
+					table.append(tr);
+				})
+			})
+
+			//获取登陆用户的最新文件
+			$.get("/community/user/getLoginUserNewFile", {}, function (result) {
+				var table = $("#newFile");
+
+				$.each(result.data,function (index, file) {
+					var tr = $("<tr></tr>");
+					var td = $("<td></td>");
+					td.text(index+1);
+					tr.append(td);
+					var td = $("<td></td>");
+					td.text(file.fname);
+					tr.append(td);
+					var td = $("<td></td>");
+					td.text(file.sendTime);
+					tr.append(td);
+					var td = $("<td></td>");
+					var span = $("<span></span>")
+					td.append(span);
+					tr.append(td);
+					if (file.ispass == 0){
+						span.attr("class","label label-pink");
+						span.text("审核通过");
+					} else if (file.ispass == 1){
+						span.text("等待审核");
+						span.attr("class","label label-purple");
+					} else if (file.ispass == 2){
+						span.text("审核未过");
+						span.attr("class","label label-danger");
+					}
+					table.append(tr);
+				})
+			})
+
+			//获取最上方的数据
+			$.get("/community/user/getTopMess", {}, function (result) {
+				console.log(result);
+
+				//点赞评论数
+				var fc = $("#fc");
+				fc.text(result.data.fabulousNum + result.data.commentsNum);
+
+				//我的资源量
+				var myCount = $("#myCount");
+				myCount.text(result.data.fileCount + result.data.textCount);
+
+				//文件下载量
+				var loadCount = $("#loadCount");
+				loadCount.text(result.data.loadCount);
+
+				//积分
+				var score = $("#score");
+				score.text(result.data.score);
+			})
+
+		</script>
+
+		<!-- navbar -->
+		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+
+		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="../assets/js/app.js" ></script>
+		<script type="text/javascript" src="../assets/js/blockUI.js" ></script>
+
+s
+
+	</body>
+
+</html>
