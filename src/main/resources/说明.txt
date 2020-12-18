@@ -1,0 +1,7 @@
+路径说明
+	http://localhost:8080/community/show
+		/html/login	登录页
+		/index.html	后台首页
+		/font/main.html	前台首页
+本地文件位置
+	E:\communitydata
